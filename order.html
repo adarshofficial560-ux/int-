@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your HealthStep Order</title>
+    <link rel="stylesheet" href="style.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific styles for the order form page */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .order-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .confirmation-message {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #d4edda; /* Light green */
+            color: #155724; /* Dark green text */
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            text-align: center;
+            display: none; /* Hidden by default */
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .confirmation-message strong {
+            color: #0c431f;
+        }
+        .back-to-home-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #6c757d; /* Grey */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .back-to-home-btn:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="order-container">
+        <h1>Confirm Your HealthStep Order</h1>
+        <form id="orderForm" action="/submit_order" method="POST"> <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="e.g., 9876543210" required>
+                <small>Format: 10 digits only (e.g., 9876543210)</small>
+            </div>
+            <div class="form-group">
+                <label for="address">Delivery Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="order_details">Your Order Details (e.g., "Quinoa Power Salad x 2", "1-month meal plan subscription"):</label>
+                <textarea id="order_details" name="order_details" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Place Order</button>
+        </form>
+
+        <div id="confirmation" class="confirmation-message">
+            <h3>Thank You for Your Order!</h3>
+            <p>Your order has been successfully placed. We appreciate you giving us this opportunity to help you on your health journey.</p>
+            <p><strong>HealthStep: Your Simple Path to Health.</strong></p>
+            <p>We've sent a confirmation to your email and will be in touch shortly to confirm delivery details.</p>
+            <a href="index.html" class="back-to-home-btn">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the default form submission
+
+            console.log('Form data being sent to backend (AJAX):');
+            console.log('Name:', document.getElementById('name').value);
+            console.log('Email:', document.getElementById('email').value);
+            console.log('Phone:', document.getElementById('phone').value);
+            console.log('Address:', document.getElementById('address').value);
+            console.log('Order:', document.getElementById('order_details').value);
+
+            const formData = new FormData(event.target);
+
+            fetch('/submit_order', { // <--- UPDATED URL to match Node.js route
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) { // Check if HTTP status is 2xx
+                    return response.text().then(text => { throw new Error(text) });
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log('Backend response:', data);
+                // Assuming 'success' is returned for a successful order
+                if (data === 'success') {
+                    document.getElementById('orderForm').style.display = 'none';
+                    document.getElementById('confirmation').style.display = 'block';
+                } else {
+                    alert('Order could not be placed: ' + data); // Show error from backend
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting order:', error);
+                alert('There was an error placing your order. Please try again. Details: ' + error.message);
+            });
+        });
+    </script>
+</body>
+</html>

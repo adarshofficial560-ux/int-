@@ -1,0 +1,296 @@
+/* =================================== */
+/* === New Styles for tools.html Page === */
+/* =================================== */
+
+/* 1. Page Header (Tools Hero) */
+.page-header.tools-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1542842400-337c76f6c905?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+    height: 60vh; /* Shorter than main hero but still impactful */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text-color);
+    padding-top: 80px; /* Offset for fixed navbar */
+}
+
+.page-header.tools-hero h1,
+.page-header.tools-hero p {
+    color: var(--light-text-color);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 2. General Section Styling for Tools Page */
+.info-section,
+.bmi-section,
+.menu-section {
+    padding: 80px 0; /* Use standard section padding */
+    position: relative; /* For background images */
+    overflow: hidden; /* Ensure backgrounds don't spill */
+}
+
+/* Create the alternating background effect */
+.info-section,
+.menu-section {
+    background-color: var(--secondary-color);
+}
+
+.bmi-section {
+    background-color: #fff;
+}
+
+/* Background image for diet information section */
+.diet-info-bg {
+    background: var(--secondary-color) url('https://www.transparenttextures.com/patterns/clean-gray-paper.png'); /* Subtle texture */
+}
+
+/* 3. Info Section (Diets) */
+.info-section h2 {
+    margin-bottom: 40px;
+}
+
+.diet-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.diet-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    display: flex; /* Use flex for vertical alignment */
+    flex-direction: column;
+    justify-content: space-between; /* Push button to bottom */
+}
+
+.diet-card h3 {
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.diet-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.diet-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows paragraph to take up available space */
+}
+
+.btn-small {
+    padding: 8px 20px; /* Smaller button for cards */
+    font-size: 0.9rem;
+}
+
+
+/* 4. BMI Calculator (styles the new .tool-card div) */
+.bmi-section .container {
+    padding: 0 20px; /* Add some padding to the container */
+}
+
+.tool-card {
+    max-width: 600px;
+    margin: 0 auto; /* Center the calculator card */
+    padding: 30px 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.tool-card h2 {
+    text-align: center; /* Center h2 for the tool card */
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.tool-card p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tool-card div {
+    margin-bottom: 20px;
+}
+
+.tool-card label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--heading-color);
+}
+
+.tool-card input[type="number"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#bmi-calc-button {
+    display: block; /* Make button full width */
+    width: 100%;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.tool-card h3 {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--heading-color);
+}
+
+#bmi-result {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.bmi-status {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: inline-block; /* Allows padding and background */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bmi-status.invalid {
+    color: #c0392b; /* Red for errors */
+    background-color: #fcecec;
+}
+.bmi-status.underweight {
+    color: #e67e22; /* Orange */
+    background-color: #fdf3e8;
+}
+.bmi-status.normal {
+    color: #27ae60; /* Green */
+    background-color: #eaf7ed;
+}
+.bmi-status.overweight {
+    color: #f39c12; /* Yellow-orange */
+    background-color: #fdf8e8;
+}
+.bmi-status.obese {
+    color: #c0392b; /* Red */
+    background-color: #fcecec;
+}
+
+/* 5. Menu Section */
+.menu-section h2 {
+    margin-bottom: 40px;
+}
+
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease-in-out;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+    flex-shrink: 0; /* Prevents image from shrinking */
+}
+
+.menu-item div {
+    flex-grow: 1; /* Allows text content to take remaining space */
+}
+
+.menu-item h4 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--heading-color);
+}
+
+.menu-item .menu-price {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* 6. Mock Order Button (already styled with .btn .btn-primary) */
+.menu-section .btn-primary {
+    margin-top: 50px; /* More space above the button */
+    padding: 15px 35px;
+    font-size: 1.1rem;
+}
+
+.menu-section .menu-subtext {
+    margin-top: 15px;
+}
+
+/* Responsive adjustments for tools page */
+@media (max-width: 768px) {
+    .page-header.tools-hero {
+        height: 45vh;
+        padding-top: 100px;
+    }
+    .page-header.tools-hero h1 {
+        font-size: 2.2rem;
+    }
+    .page-header.tools-hero p {
+        font-size: 1rem;
+    }
+
+    .diet-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .menu-items-grid {
+        grid-template-columns: 1fr;
+    }
+    .tool-card {
+        padding: 25px;
+    }
+    .tool-card h2 {
+        font-size: 1.8rem;
+    }
+    #bmi-result {
+        font-size: 1.8rem;
+    }
+}

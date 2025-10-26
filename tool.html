@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthStep - Your Simple Path to Health</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">HealthStep</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">The Problem</a></li>
+                <li><a href="index.html">Our Solution</a></li>
+                <li><a href="index.html">Who We Help</a></li>
+                <li><a href="index.html">The Market</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header tools-hero">
+        <div class="container">
+            <h1>My Health & Wellness Tools</h1>
+            <p>Welcome! Here you can find practical resources and information to empower your health journey.</p>
+        </div>
+    </div>
+
+    <section class="info-section diet-info-bg">
+        <div class="container">
+            <h2>Information About Diets</h2>
+            <p class="section-subtitle">Understanding what you eat is the first step to a healthier you. Dive into popular diet approaches.</p>
+            
+            <div class="diet-cards-grid">
+                <div class="diet-card">
+                    <h3>Mediterranean Diet</h3>
+                    <img src="https://www.google.com/imgres?q=mediterranean%20diet&imgurl=https%3A%2F%2Fwww.mdpi.com%2Fnutrients%2Fnutrients-11-02941%2Farticle_deploy%2Fhtml%2Fimages%2Fnutrients-11-02941-g001.png&imgrefurl=https%3A%2F%2Fwww.mdpi.com%2F2072-6643%2F11%2F12%2F2941&docid=-cQYEHsuQV_apM&tbnid=rmbnj6GZ8mMbEM&vet=12ahUKEwie0Z72876QAxW7yDgGHZO9L8cQM3oECBkQAA..i&w=3065&h=3941&hcb=2&ved=2ahUKEwie0Z72876QAxW7yDgGHZO9L8cQM3oECBkQAA" alt="Mediterranean Food" class="diet-card-img">
+                    <p>This diet emphasizes fruits, vegetables, whole grains, and healthy fats like olive oil. It's known for its heart-healthy benefits and sustainable approach to eating. </p>
+                    <a href="#" class="btn btn-primary btn-small">Learn More</a>
+                </div>
+                <div class="diet-card">
+                    <h3>Keto Diet</h3>
+                    <img src="https://images.unsplash.com/photo-1579717147774-6019318a6e34?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Keto Food" class="diet-card-img">
+                    <p>A very low-carb, high-fat diet. It puts your body into a metabolic state called ketosis, where it burns fat for fuel instead of carbohydrates.</p>
+                    <a href="#" class="btn btn-primary btn-small">Learn More</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="bmi-section">
+        <div class="container">
+            <div class="tool-card">
+                <h2>BMI Calculator</h2>
+                <p>Calculate your Body Mass Index (BMI) to understand if you are at a healthy weight relative to your height.</p>
+                <div>
+                    <label for="height">Height (in meters, e.g., 1.75):</label>
+                    <input type="number" id="height" placeholder="e.g., 1.75" step="0.01">
+                </div>
+                <div>
+                    <label for="weight">Weight (in kg):</label>
+                    <input type="number" id="weight" placeholder="e.g., 70" step="0.1">
+                </div>
+                <button id="bmi-calc-button">Calculate BMI</button>
+                <h3>Your BMI is: <span id="bmi-result">...</span></h3>
+                <p id="bmi-category" class="bmi-status"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="container">
+            <h2>Order Healthy Meals</h2>
+            <p class="section-subtitle">Fuel your body with nutritious and delicious meals, prepared with care and delivered to your door.</p>
+
+            <div class="menu-items-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a579b569e79a?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Quinoa Power Salad">
+                    <div>
+                        <h4>Quinoa Power Salad</h4>
+                        <p class="menu-price">$12.99</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1540189549336-e699fea304de?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Grilled Chicken Wrap">
+                    <div>
+                        <h4>Grilled Chicken Wrap</h4>
+                        <p class="menu-price">$10.99</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1505576755490-bc40989f5c4b?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Berry Smoothie Bowl">
+                    <div>
+                        <h4>Berry Smoothie Bowl</h4>
+                        <p class="menu-price">$8.50</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1490647932231-be6375628b76?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Veggie Stir-fry">
+                    <div>
+                        <h4>Wholesome Veggie Stir-fry</h4>
+                        <p class="menu-price">$11.50</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="order.html" class="btn btn-primary my-button-style">
+                Click Here to Place Your Order!
+            </a>
+            <p class="menu-subtext">(Orders are currently placed via our contact form)</p>
+        </div>
+		
+		<h2>All Submitted Orders</h2>
+<div id="order-list">
+    </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 HealthStep</p>
+            <p>An Innovathon Project</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("bmi-calc-button").addEventListener("click", function() {
+            let height = parseFloat(document.getElementById("height").value); // Use parseFloat for decimals
+            let weight = parseFloat(document.getElementById("weight").value); // Use parseFloat for decimals
+            let bmiResultSpan = document.getElementById("bmi-result");
+            let bmiCategoryP = document.getElementById("bmi-category");
+
+            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+                bmiResultSpan.innerText = "Invalid Input";
+                bmiCategoryP.innerText = "Please enter valid numbers for height and weight.";
+                bmiCategoryP.className = "bmi-status invalid"; // Add a class for styling errors
+                return;
+            }
+
+            let bmi = weight / (height * height);
+            bmiResultSpan.innerText = bmi.toFixed(2);
+
+            // Determine BMI category
+            let category = "";
+            let categoryClass = "";
+            if (bmi < 18.5) {
+                category = "Underweight";
+                categoryClass = "underweight";
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                category = "Normal weight";
+                categoryClass = "normal";
+            } else if (bmi >= 25 && bmi < 29.9) {
+                category = "Overweight";
+                categoryClass = "overweight";
+            } else {
+                category = "Obese";
+                categoryClass = "obese";
+            }
+            bmiCategoryP.innerText = `Category: ${category}`;
+            bmiCategoryP.className = `bmi-status ${categoryClass}`; // Apply class for category styling
+        });
+		
+		// This code runs as soon as the tool.html page loads
+     window.addEventListener('load', () => {
+            fetch('/get-orders') // 1. Call your new backend route
+           .then(response => response.json()) // 2. Convert the response to JSON
+           .then(orders => { // 3. 'orders' is your array of data
+
+            const orderListDiv = document.getElementById('order-list');
+            orderListDiv.innerHTML = ''; // Clear any loading text
+
+            if (orders.length === 0) {
+                orderListDiv.innerHTML = '<p>No orders found.</p>';
+                return;
+            }
+
+            // 4. Loop through each order and create HTML for it
+            orders.forEach(order => {
+                const orderElement = document.createElement('div');
+                orderElement.className = 'order-card'; // Add a class for styling
+                orderElement.innerHTML = `
+                    <h4>Order from: ${order.name}</h4>
+                    <p><strong>Email:</strong> ${order.email}</p>
+                    <p><strong>Address:</strong> ${order.address}</p>
+                    <p><strong>Details:</strong> ${order.order_details}</p>
+                    <p><strong>Date:</strong> ${new Date(order.orderDate).toLocaleString()}</p>
+                `;
+                orderListDiv.appendChild(orderElement);
+            });
+
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('order-list').innerHTML = '<p>Could not load orders.</p>';
+        });
+});
+    </script>
+	
+	
+
+</body>
+</html>
